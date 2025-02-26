@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <meta name="description" content="Personal portfolio showcasing my web development projects and skills">
+    <meta name="keywords" content="web developer, portfolio, HTML, CSS, JavaScript">
+    <meta name="author" content="Ivan Binet Sanchez">
+    <title>Personal Portfolio</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico" >
+    <link rel="stylesheet" href="mystyle.css">
+  </head>
+
+  <body>
+    <header>
+      <h1>Ivan Binet Sanchez's <i> Portfolio</i></h1></header>
+      <nav>
+        <ul>
+          <li><a href="./index.html"> Skills/Pojects</a></li>
+          <li><a href="./education.html"> Education </a></li>
+          <li><a href="./contact.html"> Contact </a></li>
+          <li><a href="./labs.html"> Labs </a></li>
+        </ul>
+      </nav>
+
+    <main>
+      <article>
+        <h2>Education</h2>
+      <section>
+        <h3>University and Degree</h3>
+        <p>Computer Engineering at UCSD</p>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!4v1738535014591!6m8!1m7!1sCAoSLEFGMVFpcE5hZDFac0RNeUpIa2VUN1ZpTHZLS29iTFk0a1RzMnBBMWJRUy1Q!2m2!1d32.88031002879148!2d-117.2375637644354!3f340!4f10!5f0.7820865974627469"
+          width="600"
+          height="450"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        >
+        </iframe>
+        <details>
+          <summary>Details</summary>
+          UCSD Library walk.
+        </details>
+        <table>
+          <caption>
+            Programming Track
+          </caption>
+          <colgroup>
+            <col >
+            <col >
+            <col >
+            <col >
+            <col >
+          </colgroup>
+          <tr>
+            <td></td>
+            <th scope="col">Year 1</th>
+            <th scope="col">Year 2</th>
+            <th scope="col">Year 3</th>
+            <th scope="col">Year 4</th>
+          </tr>
+          <tr>
+            <th scope="row">Coding</th>
+            <td>Java</td>
+            <td>C++</td>
+            <td>VHDL</td>
+            <td>React</td>
+          </tr>
+        </table>
+      </section>
+        <section>
+          <h3>Quotes</h3>
+          <blockquote>
+            <p>"The only way to do great work is to love what you do."</p>
+            <cite>- Steve Jobs</cite>
+          </blockquote>
+
+          <dl>
+            <dt>HTML</dt>
+            <dd>
+              HyperText Markup Language - the standard markup language for
+              creating web pages.
+            </dd>
+
+            <dt>CSS</dt>
+            <dd>
+              Cascading Style Sheets - the language used to describe the
+              presentation of HTML documents.
+            </dd>
+
+            <dt>JavaScript</dt>
+            <dd>A programming language that enables interactive web pages.</dd>
+          </dl>
+        </section>
+      </article>
+      <template id="myTemplate">
+        <!-- Blockquote with citation -->
+        <blockquote>
+          <p>"The only way to do great work is to love what you do."</p>
+          <cite>- Steve Jobs</cite>
+        </blockquote>
+        
+        <search>
+          <form action="https://httpbin.org/anything">
+            <label for="query">Find an article</label>
+            <input id="query" name="q" type="search">
+            <button type="submit">Go!</button>
+          </form>
+        </search>
+
+        <!-- Text modifications with ins and del -->
+        <p>
+          The meeting is scheduled for <del>Monday at 3 PM</del>
+          <ins>Tuesday at 2 PM</ins>.
+        </p>
+
+        <!-- Dialogue example -->
+        <dialog open>
+          <p>Would you like to save your changes?</p>
+          <button>Yes</button>
+          <button>No</button>
+        </dialog>
+
+        <!-- Definition list with terms and descriptions -->
+        <dl>
+          <dt>HTML</dt>
+          <dd>
+            HyperText Markup Language - the standard markup language for
+            creating web pages.
+          </dd>
+
+          <dt>CSS</dt>
+          <dd>
+            Cascading Style Sheets - the language used to describe the
+            presentation of HTML documents.
+          </dd>
+
+          <dt>JavaScript</dt>
+          <dd>A programming language that enables interactive web pages.</dd>
+        </dl>
+      </template>
+    </main>
+
+    <footer>
+      <hr >
+      <div>
+        <pre-next l-r="left"><a href="./index.html"> Previous</a></pre-next>
+        <pre-next l-r="right"><a href="./contact.html"> Next</a></pre-next>
+        <p> by Ivan Binet Sanchez </p>
+      </div>
+    </footer>
+  </body>
+</html>

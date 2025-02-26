@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <meta name="description" content="Personal portfolio showcasing my web development projects and skills">
+    <meta name="keywords" content="web developer, portfolio, HTML, CSS, JavaScript">
+    <meta name="author" content="Ivan Binet Sanchez">
+    <title>Personal Portfolio</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico" >
+    <link rel="stylesheet" href="mystyle.css">
+    <script>
+      class HelloWorld extends HTMLElement {
+          constructor() {
+              super();
+              console.log("Hello World!");
+          }
+      }
+      
+      customElements.define('hello-world', HelloWorld);
+      </script>
+      
+  </head>
+
+  <body>
+    <noscript>Your browser does not support JavaScript</noscript>
+    <header>
+      <h1>Ivan Binet Sanchez's <i> Portfolio</i></h1>    </header>
+      <nav>
+        <ul>
+          <li><a href="./index.html"> Skills/Pojects</a></li>
+          <li><a href="./education.html"> Education </a></li>
+          <li><a href="./contact.html"> Contact </a></li>
+          <li><a href="./labs.html"> Labs </a></li>
+        </ul>
+      </nav>
+
+
+    <main>
+      <article><h2>Labs</h2>
+      <section>
+        <h3>Hello World</h3>
+        <hello-world></hello-world>
+        <p>Inspect the document then go into the console to see To see my custom <code>hello-world</code> tag in action</p>
+      <p>This is the code I used to run it </p> <pre><code> class HelloWorld extends HTMLElement {
+        constructor() {
+            super();
+            console.log("Hello World!");
+        }
+    }
+    
+    customElements.define('hello-world', HelloWorld); </code> </pre>
+    <p>Please press <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>R</kbd> to re-render the page.</p>
+      </section>
+        <figure>
+          <figcaption>Listen to the Hello world:</figcaption>
+          <audio controls src="/audio/trex.mp3"></audio>
+          <a href="/audio/trex.mp3"> Download audio </a>
+        </figure>
+        
+      
+      <section>
+        <h3>SVG Drawing</h3>
+        <svg width="400" height="200" viewBox="0 0 400 200">
+          <!-- Rectangle with gradient -->
+          <defs>
+            <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" style="stop-color:rgb(255,0,0);stop-opacity:1" > </stop>
+              <stop offset="100%" style="stop-color:rgb(0,0,255);stop-opacity:1" ></stop>
+            </linearGradient>
+          </defs>
+          
+         
+          <rect width="400" height="200" fill="url(#gradient)" > </rect>
+          
+          <circle cx="200" cy="100" r="50" fill="yellow" stroke="black" stroke-width="2"> </circle>
+          
+          <!-- Text -->
+          <text x="150" y="180" fill="white" font-family="Arial" font-size="20">
+            My SVG Drawing
+          </text>
+        </svg>
+      </section>
+      <section>
+        <h3>Canvas Drawing</h3>
+        <canvas id="myCanvas" width="400" height="200" style="border:1px solid #000;">
+          Your browser does not support the canvas element.
+        </canvas>
+        <script>
+          const canvas = document.getElementById('myCanvas');
+          const ctx = canvas.getContext('2d');
+          ctx.fillStyle = '#FF0000';
+          ctx.strokeStyle = '#000000';
+          ctx.fillRect(50, 50, 100, 100);
+          ctx.beginPath();
+          ctx.arc(250, 100, 50, 0, 2 * Math.PI);
+          ctx.fill();
+          ctx.stroke();
+          ctx.fillStyle = '#000000';
+          ctx.font = '20px Arial';
+          ctx.fillText('My Canvas Drawing', 130, 180);
+        </script>
+      </section>
+      <section><h3>Einsteins Formula</h3>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <mrow>
+              <mi>E</mi>
+              <mo>=</mo>
+              <mi>m</mi>
+              <msup>
+                  <mi>c</mi>
+                  <mn>2</mn>
+              </msup>
+          </mrow>
+      </math></section>
+    </article>
+    </main>
+    
+    
+    <footer>
+      <hr >
+      <div>
+        <pre-next l-r="left"><a href="./contact.html"> Previous</a></pre-next>
+        <pre-next l-r="right"><a href="./index.html"> Next</a></pre-next>
+        <p> by Ivan Binet Sanchez </p>
+      </div>
+    </footer>
+  </body>
+</html>
