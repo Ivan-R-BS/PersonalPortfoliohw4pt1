@@ -4,7 +4,298 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="mystyle.css">
+    <style>@font-face {
+        font-family: 'Montserrat';
+        src: url('fonts/Montserrat-Regular.woff2') format('woff2'),
+             url('fonts/Montserrat-Regular.woff') format('woff');
+        font-display: swap;
+      }
+      
+      @font-face {
+        font-family: 'Roboto';
+        src: url('fonts/Roboto-Regular.woff2') format('woff2'),
+             url('fonts/Roboto-Regular.woff') format('woff');
+        font-display: swap;
+      }
+      
+      :root {
+        --primary-color: #003135;
+        --header-bg: #024950;
+        --nav-bg: #3c698a;
+        --nav-text: #f9f9f9;
+        --hover-bg: #e42e00;
+        --footer-text: yellow;
+        --link-color: #afdde5;
+        --section-even-bg: #004850;
+        --section-odd-bg: #002530;
+        --section-padding: clamp(2rem, 4vw, 4rem);
+        --spacing-unit: clamp(0.5rem, 2vw, 1.5rem);
+        --container-padding: max(1rem, 5%);
+        --base-font-size: clamp(1rem, 2vw, 1.25rem);
+        --h1-font-size: clamp(1.5rem, 4vw, 2.5rem);
+        --transition-speed: 0.3s;
+        --hover-transform: translateY(-0.25rem);
+      }
+      
+      body {
+        background-color: var(--primary-color);
+        margin: 0;
+        min-height: 100dvh;
+        display: flex;
+        flex-direction: column;
+        font-family: "Montserrat", system-ui, sans-serif;
+        font-size: var(--base-font-size);
+        color: var(--nav-text);
+      }
+      
+      header {
+        padding: 0;
+        width: 100%;
+      }
+      
+      header h1 {
+        width: inherit;
+        background-color: var(--header-bg);
+        margin: 0;
+        padding: var(--spacing-unit);
+        font-size: var(--h1-font-size);
+        font-family: "Roboto", Arial, sans-serif;
+      }
+      
+      nav {    
+        background-color: var(--nav-bg);
+        position: sticky;
+        top: 0;
+        width: 100%;
+        z-index: 100;
+        padding: var(--spacing-unit);
+        transform-origin: top;
+      }
+      
+      nav ul {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: var(--spacing-unit);
+        padding: 0;
+        margin: 0;
+      }
+      
+      nav ul li {
+        list-style: none;
+      }
+      
+      nav ul li a {
+        color: var(--nav-text);
+        text-decoration: none;
+        padding: 0.5em 1em;
+        border-radius: 0.25em;
+        transition: transform var(--transition-speed) ease,
+                    box-shadow var(--transition-speed) ease;
+        position: relative;
+      }
+      
+      nav ul li a::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 0.125em;
+        background: currentColor;
+        left: 0;
+        bottom: -0.375em;
+        transition: width var(--transition-speed) ease;
+      }
+      
+      nav ul li a:hover {
+        transform: var(--hover-transform);
+        box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.1);
+        color: var(--hover-bg);
+      }
+      
+      nav ul li a:hover::after {
+        width: 100%;
+      }
+      
+      section {
+        padding: var(--section-padding);
+        margin: 0;
+        transition: background-color var(--transition-speed) ease;
+        animation: slideIn 0.5s ease-out;
+      }
+      
+      section:nth-of-type(even) {
+        background-color: var(--section-even-bg);
+        box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.2);
+      }
+      
+      section:nth-of-type(odd) {
+        background-color: var(--section-odd-bg);
+        box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.1);
+      }
+      
+      section:hover {
+        transform: scale(1.01);
+        transition: transform var(--transition-speed) ease;
+      }
+      
+      section h3 {
+        margin-top: 0;
+        font-size: 1.5em;
+        color: var(--link-color);
+      }
+      
+      figure {
+        margin: var(--spacing-unit) 0;
+        width: 100%;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      figcaption {
+        font-style: italic;
+        color: var(--link-color);
+        margin-top: 0.75rem;
+        font-size: 0.9em;
+        text-align: center;
+        padding: 0.5rem 1rem;
+        background-color: rgba(0, 0, 0, 0.2);
+        border-radius: 4px;
+        backdrop-filter: blur(4px);
+      }
+      
+      aside {
+        font-size: 0.85em;
+        color: #8a9ea1;
+        font-style: italic;
+        padding: 0.75rem 1.5rem;
+        border-left: 3px solid var(--link-color);
+        margin: 1rem 0;
+        background-color: rgba(0, 0, 0, 0.15);
+        border-radius: 0 4px 4px 0;
+        max-width: fit-content;
+        transform: translateX(2rem);
+        animation: slideIn 0.5s ease-out;
+      }
+      
+      img, video, iframe {
+        max-width: min(100%, 70dvh);
+        height: auto;
+        display: block;
+        margin: 0 auto;
+      }
+      
+      footer {
+        margin-top: auto;
+        background-color: var(--primary-color);
+      }
+      
+      footer div {
+        position: relative;
+        padding: var(--spacing-unit);
+        min-height: 3rem;
+      }
+      
+      pre-next {
+        transition: transform var(--transition-speed) ease;
+      }
+      
+      pre-next:hover {
+        transform: var(--hover-transform);
+      }
+      
+      pre-next[l-r="left"] {
+        float: left;
+      }
+      
+      pre-next[l-r="right"] {
+        float: right;
+      }
+      
+      pre-next a {
+        color: var(--link-color);
+        text-decoration: none;
+      }
+      
+      footer div p {
+        color: var(--footer-text);
+        text-align: center;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        white-space: nowrap;
+        margin: 0;
+      }
+      
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          transform: translateX(-2rem);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+      
+      form-field { display:grid;}
+      form-output { display:grid;}
+      input,output{width: 80%; }
+      form{padding: 20px;}
+      textarea{width: 90%;}
+      #submit{width: auto;}
+      form > * [required]{background-color:lightgoldenrodyellow;}
+      #errormessage, #infomessage {
+        display: none;
+        padding: 8px;
+        border-radius: 4px;
+        margin-bottom: 10px;
+      }
+      form:has(input:user-invalid) #errormessage{
+        display: block;
+        content: "1 or more input is not valid";
+        color: red;
+        background-color: #fff0f0;
+        border: 1px solid red;
+      }
+      form:valid #infomessage {
+        display: block;
+        content: "Form is ready to submit";
+        color: green;
+        background-color: #f0fff0;
+        border: 1px solid green;
+      }
+      
+      input:user-invalid {
+        border: 2px solid red;
+        background-color: lightcoral;
+      }
+      
+      input:user-invalid + span::before {
+        content: "✖";
+        color: red;
+      }
+      
+      @media (max-width: 600px) {
+        footer div {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: var(--spacing-unit);
+        }
+      
+        footer div pre-next[l-r="left"],
+        footer div pre-next[l-r="right"] {
+          float: none;
+        }
+      
+        footer div p {
+          position: static;
+          transform: none;
+          order: -1;
+        }
+      }</style>
 </head>
 <body>
     <form action = "https://httpbin.org/post" method="post" id = "formpost" >
@@ -21,7 +312,7 @@
         
         <form-field>
           <label for="comments">Additional comments:</label>
-          <textarea id="comments" name="comments" rows ="5" cols = "55"> </textarea>
+          <textarea id="comments" name="comments" rows ="5" cols = "55" maxlength="300"> </textarea>
         </form-field>
         <form-output>
           <output id = "errormessage" name="errormessage" for="errormessage">1 or more input is not valid</output>

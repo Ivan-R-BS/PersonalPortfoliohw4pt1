@@ -263,7 +263,7 @@ form:valid #infomessage {
 
 input:user-invalid {
   border: 2px solid red;
-  background-color: #c51c95;
+  background-color: lightcoral;
 }
 
 input:user-invalid + span::before {
