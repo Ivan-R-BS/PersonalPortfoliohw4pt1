@@ -233,6 +233,44 @@ footer div p {
   }
 }
 
+form-field { display:grid;}
+form-output { display:grid;}
+input,output{width: 80%; }
+form{padding: 20px;}
+textarea{width: 90%;}
+#submit{width: auto;}
+form > * [required]{background-color:lightgoldenrodyellow;}
+#errormessage, #infomessage {
+  display: none;
+  padding: 8px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+form:has(input:user-invalid) #errormessage{
+  display: block;
+  content: "1 or more input is not valid";
+  color: red;
+  background-color: #fff0f0;
+  border: 1px solid red;
+}
+form:valid #infomessage {
+  display: block;
+  content: "Form is ready to submit";
+  color: green;
+  background-color: #f0fff0;
+  border: 1px solid green;
+}
+
+input:user-invalid {
+  border: 2px solid red;
+  background-color: #c51c95;
+}
+
+input:user-invalid + span::before {
+  content: "✖";
+  color: red;
+}
+
 @media (max-width: 600px) {
   footer div {
     display: flex;

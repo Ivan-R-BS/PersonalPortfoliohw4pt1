@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="mystyle.css">
+</head>
+<body>
+    <form action = "https://httpbin.org/post" method="post" id = "formpost" >
+        <input type="hidden" name="possible_bot" value="true" id="possible_bot">
+         <form-field>     
+             <label for="yourname">Name:</label>
+             <input type="text" id="yourname" name="yourname" minlength="1" maxlength="50" required>
+        </form-field>
+
+        <form-field>
+          <label for="email">email:</label>
+          <input type="email" id="email" name="email" minlength="3" maxlength="256" required>
+        </form-field>
+        
+        <form-field>
+          <label for="comments">Additional comments:</label>
+          <textarea id="comments" name="comments" rows ="5" cols = "55"> </textarea>
+        </form-field>
+        <form-output>
+          <output id = "errormessage" name="errormessage" for="errormessage">1 or more input is not valid</output>
+          <output id = "infomessage" name="infomessage" for="infomessage">Valid inputs</output>
+        </form-output>
+        <input type="submit" value="Submit" id="submit">
+      </form>
+    
+</body>
+</html>
