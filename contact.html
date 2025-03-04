@@ -9,11 +9,20 @@
     <title>Personal Portfolio</title>
     <link rel="icon" type="image/x-icon" href="images/favicon.ico" >
     <link rel="stylesheet" href="mystyle.css">
+    <script defer src = "toggle.js"></script>
+    <script defer src = "form.js"></script>
+    
   </head>
 
   <body>
+    <noscript>
+      <style>
+        #toggletheme { display: none; }
+      </style>
+      <p class="no-js-warning">Note: Theme switching requires JavaScript and is currently disabled.</p>
+    </noscript>
     <header>
-      <h1>Ivan Binet Sanchez's <i> Portfolio</i></h1>    </header>
+      <h1>Ivan Binet Sanchez's <i> Portfolio</i></h1> </header>
       <nav>
         <ul>
           <li><a href="./index.html"> Skills/Pojects</a></li>
@@ -21,6 +30,7 @@
           <li><a href="./contact.html"> Contact </a></li>
           <li><a href="./labs.html"> Labs </a></li>
         </ul>
+        <button id="toggletheme">🌙</button>
       </nav>
 
 
@@ -34,25 +44,25 @@
         </address>
       </section>
 
-      <form action = "https://httpbin.org/post" method="post" id = "formpost" >
+      <form action = "https://httpbin.org/post" method="post" id = "formpost"  >
         <input type="hidden" name="possible_bot" value="true" id="possible_bot">
          <form-field>     
              <label for="yourname">Name:</label>
-             <input type="text" id="yourname" name="yourname" minlength="1" maxlength="50" required>
+             <input type="text" id="yourname" name="yourname" minlength="1" maxlength="50" placeholder="Enter name here"  required>
         </form-field>
 
         <form-field>
           <label for="email">email:</label>
-          <input type="email" id="email" name="email" minlength="3" maxlength="256" required>
+          <input type="email" id="email" name="email" minlength="3" maxlength="256" placeholder="Enter your email here" required>
         </form-field>
         
         <form-field>
           <label for="comments">Additional comments:</label>
-          <textarea id="comments" name="comments" rows ="5" cols = "55"> </textarea>
+          <textarea id="comments" name="comments" rows ="5" cols = "55" maxlength="300" > </textarea>
         </form-field>
         <form-output>
-          <output id = "errormessage" name="errormessage" for="errormessage">1 or more input is not valid</output>
-          <output id = "infomessage" name="infomessage" for="infomessage">Valid inputs</output>
+          <output id = "errormessage" name="errormessage" for="errormessage"></output>
+          <output id = "infomessage" name="infomessage" for="infomessage"></output>
         </form-output>
         <input type="submit" value="Submit" id="submit">
       </form>

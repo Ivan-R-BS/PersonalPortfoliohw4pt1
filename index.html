@@ -9,10 +9,16 @@
     <title>Personal Portfolio</title>
     <link rel="icon" type="image/x-icon" href="images/favicon.ico" >
     <link rel="stylesheet" href="mystyle.css">
-
+    <script defer src = "toggle.js"></script>
   </head>
 
   <body>
+    <noscript>
+      <style>
+        #toggletheme { display: none; }
+      </style>
+      <p class="no-js-warning">Note: Theme switching requires JavaScript and is currently disabled.</p>
+    </noscript>
     <header>
       <h1>Ivan Binet Sanchez's <i> Portfolio</i></h1> </header>
       <nav>
@@ -22,6 +28,7 @@
           <li><a href="./contact.html"> Contact </a></li>
           <li><a href="./labs.html"> Labs </a></li>
         </ul>
+        <button id="toggletheme">🌙</button>
       </nav>
     
 

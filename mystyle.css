@@ -12,6 +12,7 @@
   font-display: swap;
 }
 
+/* Default (Dark) Theme Variables */
 :root {
   --primary-color: #003135;
   --header-bg: #024950;
@@ -31,6 +32,20 @@
   --hover-transform: translateY(-0.25rem);
 }
 
+/* Light Theme Overrides */
+[data-theme="light"] {
+  --primary-color: #d3afaf;
+  --header-bg: rgb(255,0,255);
+  --nav-bg: #ddd;
+  --nav-text: #333;
+  --hover-bg: #131010;
+  --footer-text: #de1c1c;
+  --link-color: #1b6898;
+  --section-even-bg: #69b16e;
+  --section-odd-bg: #369dcc;
+}
+
+/* Global Styles */
 body {
   background-color: var(--primary-color);
   margin: 0;
@@ -84,8 +99,7 @@ nav ul li a {
   text-decoration: none;
   padding: 0.5em 1em;
   border-radius: 0.25em;
-  transition: transform var(--transition-speed) ease,
-              box-shadow var(--transition-speed) ease;
+  transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
   position: relative;
 }
 
@@ -233,20 +247,21 @@ footer div p {
   }
 }
 
-form-field { display:grid;}
-form-output { display:grid;}
-input,output{width: 80%; }
-form{padding: 20px;}
-textarea{width: 90%;}
-#submit{width: auto;}
-form > * [required]{background-color:lightgoldenrodyellow;}
+/* Form Styles (unchanged) */
+form-field { display: grid; }
+form-output { display: grid; }
+input, output { width: 80%; }
+form { padding: 20px; }
+textarea { width: 90%; }
+#submit { width: auto; }
+form > * [required] { background-color: lightgoldenrodyellow; }
 #errormessage, #infomessage {
   display: none;
   padding: 8px;
   border-radius: 4px;
   margin-bottom: 10px;
 }
-form:has(input:user-invalid) #errormessage{
+form:has(input:user-invalid) #errormessage {
   display: block;
   content: "1 or more input is not valid";
   color: red;
@@ -260,15 +275,9 @@ form:valid #infomessage {
   background-color: #f0fff0;
   border: 1px solid green;
 }
-
 input:user-invalid {
   border: 2px solid red;
   background-color: lightcoral;
-}
-
-input:user-invalid + span::before {
-  content: "✖";
-  color: red;
 }
 
 @media (max-width: 600px) {
